@@ -34,14 +34,14 @@
 #include <linux/akm8975.h>
 #include <linux/earlysuspend.h>
 
-#define AK8975DRV_CALL_DBG 1
+#define AK8975DRV_CALL_DBG 0
 #if AK8975DRV_CALL_DBG
 #define FUNCDBG(msg)	pr_err("%s:%s\n", __func__, msg);
 #else
 #define FUNCDBG(msg)
 #endif
 
-#define AK8975DRV_DATA_DBG 1
+#define AK8975DRV_DATA_DBG 0
 #define MAX_FAILURE_COUNT 10
 
 struct akm8975_data {
