@@ -484,18 +484,18 @@ static void antares_keys_init(void)
 #endif
 
 #ifdef CONFIG_INPUT_GPIO_SWITCH
-#define GPIO_SWITCH(_id, _gpio)		\
+#define GPIO_SWITCH(_id, _gpio, _name)		\
 	{					\
 		.code = _id,			\
 		.gpio = TEGRA_GPIO_##_gpio,	\
 		.active_low = 1,		\
-		.desc = #_id,			\
+		.desc = #_name,			\
 		.type = EV_SW,			\
 		.debounce_interval = 10,	\
 	}
 
 static struct gpio_switch antares_switches[] = {
-	[0] = GPIO_SWITCH(SW_ROTATE_LOCK, PH2),
+	[0] = GPIO_SWITCH(SW_ROTATE_LOCK, PH2, rotationlock),
 };
 
 static struct gpio_sw_platform_data antares_sw_platform_data = {
